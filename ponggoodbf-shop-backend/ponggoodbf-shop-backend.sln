@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ponggoodbf-shop-backend", "ponggoodbf-shop-backend.csproj", "{29D6129E-C53F-45F7-8DD8-7B2760877A68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ponggoodbf-shop-backend.UnitTests", "..\ponggoodbf-shop-backend.UnitTests\ponggoodbf-shop-backend.UnitTests.csproj", "{01495A43-EEF6-4BD8-854D-9B2868BDE83B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29D6129E-C53F-45F7-8DD8-7B2760877A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D6129E-C53F-45F7-8DD8-7B2760877A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D6129E-C53F-45F7-8DD8-7B2760877A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D6129E-C53F-45F7-8DD8-7B2760877A68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01495A43-EEF6-4BD8-854D-9B2868BDE83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01495A43-EEF6-4BD8-854D-9B2868BDE83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01495A43-EEF6-4BD8-854D-9B2868BDE83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01495A43-EEF6-4BD8-854D-9B2868BDE83B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF808CA4-EB4E-4E43-AB46-610F441A40FD}
+	EndGlobalSection
+EndGlobal
