@@ -23,7 +23,7 @@ namespace ponggoodbf_shop_backend.Controllers
         [Route("Product")]
         public IActionResult GetItemCategory([FromQuery]string category)
         {
-            return Content($"category={category}");
+            return Content($"category={category},userid={Request.Headers["x-user-id"]}");
         }
     }
 }

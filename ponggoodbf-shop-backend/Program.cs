@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Builder;
+using ponggoodbf_shop_backend.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,7 +20,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
+app.UseMiddleware<VerifyTokenAndCookie>();
 app.MapControllers();
+
 
 app.Run();
