@@ -9,11 +9,19 @@ namespace ponggoodbf_shop_backend.Services
             return new PersonalInfomation();
         }
 
-        public PasswordVerify EditPassword(PasswordVerify password)
+        public PasswordVerify EditPassword(PasswordVerify password, int userId)
         {
             return new PasswordVerify();
         }
 
-        public AddressInfomation Add
+        public AddressInfomation AddNewAddress(AddressInfomation addressInfomation, int userId)
+        {
+            return new AddressInfomation();
+        }
+
+        public AddressInfomation EditNewAddress(AddressInfomation addressInfomation, int userId)
+        {
+            return new AddressInfomation();
+        }
     }
 }

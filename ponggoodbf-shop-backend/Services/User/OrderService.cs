@@ -10,17 +10,17 @@ namespace ponggoodbf_shop_backend.Services.User
 
         }
 
-        public OrderInfomation GetOrderByRecordcode(string recordcode)
+        public OrderInfomation GetOrderByRecordcode(string recordcode, int userId)
         {
             return new OrderInfomation();
         }
 
-        public OrderInfomation GetOrderByKeyword(string keyword)
+        public OrderInfomation GetOrderByKeyword(string keyword, int userId)
         {
             return new OrderInfomation();
         }
 
-        public List<OrderInfomation> DeleteOrder(string recordcode)
+        public List<OrderInfomation> CancelOrder(string recordcode,int userId)
         {
             return new List<OrderInfomation>();
         }
