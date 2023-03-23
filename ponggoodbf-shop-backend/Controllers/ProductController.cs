@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace ponggoodbf_shop_backend.Controllers
 {
@@ -23,7 +24,20 @@ namespace ponggoodbf_shop_backend.Controllers
         [Route("Product")]
         public IActionResult GetItemCategory([FromQuery]string category)
         {
-            return Content($"category={category},userid={Request.Headers["x-user-id"]}");
+            var temp = new Tmp()
+            {
+                category = category,
+                userid = Request.Headers["x-user-id"],
+
+            };
+            return Content(JsonSerializer.Serialize(temp));
+        }
+
+        public class Tmp
+        {
+            public string? category { get;set; }
+
+            public string? userid { get;set; }
         }
     }
 }
