@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ponggoodbf_shop_backend.Services;
 using System.Text.Json;
 
 namespace ponggoodbf_shop_backend.Controllers
@@ -8,9 +9,10 @@ namespace ponggoodbf_shop_backend.Controllers
     {
         [HttpGet]
         [Route("Product/Index")]
-        public IActionResult Index()
+        public IActionResult Index([FromQuery] string category)
         {
-            return Content("OK");
+            var result = new ProductService().GetProducts(category);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
         }
 
         [HttpGet]

@@ -4,11 +4,12 @@ namespace ponggoodbf_shop_backend.Services
 {
     public class ProductService
     {
-        public IEnumerable<ProductInfomation> GetProducts(string category)
+        public ResponseModel GetProducts(string category)
         {
             var products = new List<ProductInfomation>();
             products.Add(new ProductInfomation());
-            return products;
+
+            return new ResponseModel() { code=1,msg="獲取成功",data= products };
         }
 
         public ProductInfomation GetProductById(string productId)
