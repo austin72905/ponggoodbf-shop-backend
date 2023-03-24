@@ -30,7 +30,7 @@ namespace ponggoodbf_shop_backend.Middlewares
         {
             var url = context.Request.Path.ToString();
             //這個之後可以刪掉
-            context.Request.Headers.Append("pong-token", "66666");
+            context.Request.Headers.Append("pong-token", "xxx123654a");
             if (_needTokenUrl.Contains(url))
             {
                 //教驗token

@@ -17,5 +17,14 @@ namespace ponggoodbf_shop_backend.Controllers
             var result = new AccountService().GetUserInfo(token);
             return Content(JsonSerializer.Serialize(result), contentType: "application/json");
         }
+
+        [HttpPost]
+        [Route("User/UpdateUserInfo")]
+        public IActionResult UpdateUserInfo([FromForm] PersonalInfomation input)
+        {
+            var token = Request.Headers["pong-token"];
+            var result = new AccountService().UpdateUserInfo(input, token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
     }
 }

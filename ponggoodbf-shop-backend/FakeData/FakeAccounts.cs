@@ -16,9 +16,25 @@ namespace ponggoodbf_shop_backend.FakeData
 
         public static Dictionary<string, SessionInfo> SessionList = new Dictionary<string, SessionInfo>()
         {
-            {"xxx123654a",new SessionInfo() }
+            {"xxx123654a",new SessionInfo()
+            { 
+                UserId = 1,
+
+            } }
         };
 
         public static Dictionary<string, string> RandomSession = new Dictionary<string, string>();
+
+        //個人訊息
+        public static Dictionary<int, PersonalInfomation> PersoninfoList = new Dictionary<int, PersonalInfomation>() 
+        {
+            { 1,new PersonalInfomation
+            { 
+                name ="王大明",
+                phoneNumber="8789456123",
+                email="DaLaoUr@mail",
+                sex="男",
+            } }
+        };
     }
 }

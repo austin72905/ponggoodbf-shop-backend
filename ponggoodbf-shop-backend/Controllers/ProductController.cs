@@ -17,9 +17,10 @@ namespace ponggoodbf_shop_backend.Controllers
 
         [HttpGet]
         [Route("Product/{productId}")]
-        public IActionResult GetItemInfo(int productId)
+        public IActionResult GetItemInfo(string productId)
         {
-            return Content($"id={productId}");
+            var result = new ProductService().GetProductById(productId);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
         }
 
         [HttpGet]

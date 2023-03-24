@@ -12,9 +12,10 @@ namespace ponggoodbf_shop_backend.Services
             return new ResponseModel() { code=1,msg="獲取成功",data= products };
         }
 
-        public ProductInfomation GetProductById(string productId)
+        public ResponseModel GetProductById(string productId)
         {
-            return new ProductInfomation();
+            var product = new ProductInfomation();
+            return new ResponseModel() { code = 1, msg = "獲取成功", data = product };
         }
     }
 }
