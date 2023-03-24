@@ -26,5 +26,47 @@ namespace ponggoodbf_shop_backend.Controllers
             var result = new AccountService().UpdateUserInfo(input, token);
             return Content(JsonSerializer.Serialize(result), contentType: "application/json");
         }
+
+        [HttpGet]
+        [Route("User/GetAllAddress")]
+        public IActionResult GetAllAddress()
+        {
+
+            var token = Request.Headers["pong-token"];
+            var result = new AddressService().GetAllAddress(token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
+
+        [HttpPost]
+        [Route("User/AddNewAddress")]
+        public IActionResult AddNewAddress([FromForm] AddressInfomation input)
+        {
+
+            var token = Request.Headers["pong-token"];
+            var result = new AddressService().AddNewAddress(input,token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
+        [HttpPost]
+        [Route("User/EditAddress")]
+        public IActionResult EditAddress([FromForm] AddressInfomation input)
+        {
+
+            var token = Request.Headers["pong-token"];
+            var result = new AddressService().EditAddress(input, token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
+        [HttpPost]
+        [Route("User/DeleteAddress")]
+        public IActionResult DeleteAddress([FromForm] int addressId)
+        {
+
+            var token = Request.Headers["pong-token"];
+            var result = new AddressService().DeleteAddress(addressId, token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
     }
 }
