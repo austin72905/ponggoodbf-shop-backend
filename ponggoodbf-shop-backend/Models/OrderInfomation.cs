@@ -19,8 +19,8 @@
 
         public OrderAddress? address { get; set; }
 
-        public CargoInfomation[]? cargoInfomation { get; set; }
-        public OrderStepInfomation[]? orderStepInfomation { get; set; }
+        public List<CargoInfomation>? cargoInfomation { get; set; }
+        public List<OrderStepInfomation>? orderStepInfomation { get; set; }
 
     }
 
