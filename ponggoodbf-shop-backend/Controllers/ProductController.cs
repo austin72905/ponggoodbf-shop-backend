@@ -36,6 +36,33 @@ namespace ponggoodbf_shop_backend.Controllers
             return Content(JsonSerializer.Serialize(temp));
         }
 
+        [HttpGet]
+        [Route("Product/GetCollection")]
+        public IActionResult GetCollection()
+        {
+            var token = Request.Headers["pong-token"];
+            var result = new ProductService().GetCollection(token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
+        [HttpPost]
+        [Route("Product/AddCollection")]
+        public IActionResult AddCollection([FromForm] string productId)
+        {
+            var token = Request.Headers["pong-token"];
+            var result = new ProductService().AddCollection(productId,token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
+        [HttpPost]
+        [Route("Product/DeleteCollection")]
+        public IActionResult DeleteCollection([FromForm] string productId)
+        {
+            var token = Request.Headers["pong-token"];
+            var result = new ProductService().DeleteCollection(productId,token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
         public class Tmp
         {
             public string? category { get;set; }

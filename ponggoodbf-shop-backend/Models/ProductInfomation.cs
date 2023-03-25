@@ -4,7 +4,7 @@
     {
         public string? title { get; set; }
 
-        public string? productId { get; set; }
+        public string productId { get; set; }=string.Empty;
 
         public string? image { get; set; }
 
