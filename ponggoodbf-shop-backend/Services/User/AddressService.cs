@@ -51,6 +51,43 @@ namespace ponggoodbf_shop_backend.Services.User
             return new ResponseModel() { code = -1, msg = "新增失敗" };
         }
 
+        public ResponseModel SetDefaultAddress(int addressId, string? token)
+        {
+            if (token == null)
+            {
+                return new ResponseModel() { code = -1, msg = "請重新登錄" };
+
+            }
+            FakeAccounts.SessionList.TryGetValue(token, out var info);
+            if (info != null)
+            {
+                var list = FakeAddress.AddressList[info.UserId];
+                var editItem = list.FirstOrDefault(o => o.id == addressId);
+                
+                if (editItem == null)
+                {
+                    return new ResponseModel() { code = -1, msg = "修改失敗", data = editItem };
+                }
+
+                foreach (var item in list)
+                {
+                    if (item.isDefaultAddress)
+                    {
+                        item.isDefaultAddress = false;
+                    }
+
+                    if (item.id == addressId)
+                    {
+                        item.isDefaultAddress = true;
+                    }
+                }
+
+                return new ResponseModel() { code = 1, msg = "修改成功", data = editItem };
+            }
+
+            return new ResponseModel() { code = -1, msg = "修改失敗" };
+        }
+
         public ResponseModel EditAddress(AddressInfomation input, string? token)
         {
             if (token == null)

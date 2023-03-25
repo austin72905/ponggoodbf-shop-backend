@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ponggoodbf_shop_backend.Models;
+using ponggoodbf_shop_backend.Services;
 using ponggoodbf_shop_backend.Services.User;
 using System.Text.Json;
 
@@ -67,6 +68,29 @@ namespace ponggoodbf_shop_backend.Controllers
             var result = new AddressService().DeleteAddress(addressId, token);
             return Content(JsonSerializer.Serialize(result), contentType: "application/json");
         }
+
+        [HttpPost]
+        [Route("User/SetDefaultAddress")]
+        public IActionResult SetDefaultAddress([FromForm] int addressId)
+        {
+
+            var token = Request.Headers["pong-token"];
+            var result = new AddressService().SetDefaultAddress(addressId, token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
+
+        [HttpPost]
+        [Route("User/EditPassword")]
+        public IActionResult EditPassword([FromForm] PasswordVerify input)
+        {
+
+            var token = Request.Headers["pong-token"];
+            var result = new UserService().EditPassword(input, token);
+            return Content(JsonSerializer.Serialize(result), contentType: "application/json");
+        }
+
+        
 
     }
 }
